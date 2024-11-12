@@ -1,0 +1,178 @@
+[gd_scene load_steps=7 format=3 uid="uid://pveiuwvu3iyq"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_0n8s1"]
+[ext_resource type="Texture2D" uid="uid://cbkvyuge6wuss" path="res://assets/UI/UI-Dark/BGBlue.png" id="2_4s5km"]
+[ext_resource type="FontFile" uid="uid://cjipaoxdc4ypp" path="res://assets/Fonts/Hauser.otf" id="2_rsi8o"]
+[ext_resource type="Texture2D" uid="uid://23f0d4s20f4v" path="res://assets/UI/UI-Dark/BlankTextBackgroundNEW.png" id="3_iywuy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7xcui"]
+font = ExtResource("2_rsi8o")
+font_size = 48
+font_color = Color(1, 0.0429688, 0.244843, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qu21"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0n8s1")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4s5km")
+expand_mode = 3
+
+[node name="central_container" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_right = 122.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="title" type="Label" parent="central_container"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "W
+PONG GAME"
+label_settings = SubResource("LabelSettings_7xcui")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="VBoxContainer" parent="central_container"]
+layout_mode = 2
+size_flags_vertical = 2
+theme_override_constants/separation = 55
+
+[node name="single_player_control" type="Control" parent="central_container/buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="single_player_button" type="Button" parent="central_container/buttons/single_player_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -29.6944
+offset_right = 129.0
+offset_bottom = 29.6944
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(1, 0.796875, 0.796875, 1)
+theme_override_colors/font_color = Color(1, 0.109375, 0.213745, 1)
+theme_override_constants/icon_max_width = 250
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("2_rsi8o")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6qu21")
+text = "SINGLEPLAYER
+"
+icon = ExtResource("3_iywuy")
+icon_alignment = 1
+
+[node name="multiplayer_control" type="Control" parent="central_container/buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="multiplayer_button" type="Button" parent="central_container/buttons/multiplayer_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -29.6944
+offset_right = 129.0
+offset_bottom = 29.6944
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(1, 0.796875, 0.796875, 1)
+theme_override_colors/font_color = Color(1, 0.109375, 0.213745, 1)
+theme_override_constants/icon_max_width = 250
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("2_rsi8o")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6qu21")
+text = "MULTIPLAYER"
+icon = ExtResource("3_iywuy")
+icon_alignment = 1
+
+[node name="quit_control" type="Control" parent="central_container/buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="quit_button" type="Button" parent="central_container/buttons/quit_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -29.6944
+offset_right = 129.0
+offset_bottom = 29.6944
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(1, 0.796875, 0.796875, 1)
+theme_override_colors/font_color = Color(1, 0.109375, 0.213745, 1)
+theme_override_constants/icon_max_width = 250
+theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("2_rsi8o")
+theme_override_font_sizes/font_size = 23
+theme_override_styles/focus = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6qu21")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6qu21")
+text = "QUIT"
+icon = ExtResource("3_iywuy")
+icon_alignment = 1
+
+[connection signal="pressed" from="central_container/buttons/single_player_control/single_player_button" to="." method="_on_single_player_button_pressed"]
+[connection signal="pressed" from="central_container/buttons/multiplayer_control/multiplayer_button" to="." method="_on_multiplayer_button_pressed"]
+[connection signal="pressed" from="central_container/buttons/quit_control/quit_button" to="." method="_on_quit_button_pressed"]

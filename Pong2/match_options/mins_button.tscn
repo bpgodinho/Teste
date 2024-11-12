@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cgqg68w2xefen"]
+
+[ext_resource type="Texture2D" uid="uid://dd0numbcegeht" path="res://assets/UI/UI-OLD/EmptyButton.png" id="1_jw4st"]
+[ext_resource type="Script" path="res://match_options/mins_button.gd" id="2_tlt6j"]
+[ext_resource type="AudioStream" uid="uid://wfq07f4672mu" path="res://assets/Audio/button_high.mp3" id="3_3ga8v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rluaf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mbsis"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjjhc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="mins_button" type="Button"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_constants/icon_max_width = 100
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_rluaf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_rluaf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mbsis")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jjjhc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rluaf")
+text = "
+"
+icon = ExtResource("1_jw4st")
+icon_alignment = 1
+script = ExtResource("2_tlt6j")
+
+[node name="button_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ga8v")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

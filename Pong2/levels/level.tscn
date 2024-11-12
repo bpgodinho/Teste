@@ -1,0 +1,363 @@
+[gd_scene load_steps=30 format=3 uid="uid://bfnvjn11oefgj"]
+
+[ext_resource type="PackedScene" uid="uid://rgss431nrajy" path="res://paddles/player_paddle.tscn" id="1_36w66"]
+[ext_resource type="Script" path="res://levels/level.gd" id="1_apioc"]
+[ext_resource type="PackedScene" uid="uid://cau3lxv3qdpg2" path="res://ball/ball.tscn" id="2_7jvdy"]
+[ext_resource type="Texture2D" uid="uid://cbkvyuge6wuss" path="res://assets/UI/UI-Dark/BGBlue.png" id="2_b6hq4"]
+[ext_resource type="PackedScene" uid="uid://cex866kdcy0p5" path="res://paddles/opponent.tscn" id="3_ci842"]
+[ext_resource type="FontFile" uid="uid://cjipaoxdc4ypp" path="res://assets/Fonts/Hauser.otf" id="3_d8ivu"]
+[ext_resource type="Texture2D" uid="uid://23f0d4s20f4v" path="res://assets/UI/UI-Dark/BlankTextBackgroundNEW.png" id="8_dwodk"]
+[ext_resource type="Texture2D" uid="uid://c602ql7d5u77q" path="res://levels/pauseBackground.png" id="8_pqt2p"]
+[ext_resource type="Script" path="res://levels/pause_background.gd" id="9_iphl2"]
+[ext_resource type="Script" path="res://levels/victory_screen.gd" id="11_k2ino"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l48nj"]
+font = ExtResource("3_d8ivu")
+font_size = 40
+font_color = Color(0.796243, 0.796243, 0.796243, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j3k53"]
+font = ExtResource("3_d8ivu")
+font_size = 40
+font_color = Color(0.796243, 0.796243, 0.796243, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_1kucp"]
+font = ExtResource("3_d8ivu")
+font_size = 80
+font_color = Color(1, 0.109804, 0.215686, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb1lg"]
+size = Vector2(1384, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7epbh"]
+font = ExtResource("3_d8ivu")
+font_size = 50
+font_color = Color(1, 0.109804, 0.215686, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ki2l"]
+size = Vector2(72, 628)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc3l2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uj3ad"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g82a5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1g0n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ididc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhtsw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1h0hl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32wgn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sthim"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e62pk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pcdjd"]
+font = ExtResource("3_d8ivu")
+font_size = 50
+font_color = Color(1, 0.109804, 0.215686, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_alggb"]
+font = ExtResource("3_d8ivu")
+font_size = 75
+font_color = Color(1, 0.109804, 0.215686, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xg3q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Level" type="Node"]
+script = ExtResource("1_apioc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource("2_b6hq4")
+expand_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PlayerScore" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_l48nj")
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 150
+
+[node name="OpponentScore" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "0"
+label_settings = SubResource("LabelSettings_j3k53")
+
+[node name="CountdownLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.0
+offset_top = -198.0
+offset_right = 219.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Countdown"
+label_settings = SubResource("LabelSettings_1kucp")
+horizontal_alignment = 1
+
+[node name="PlayerPaddle" parent="." instance=ExtResource("1_36w66")]
+position = Vector2(16, 325)
+
+[node name="WallTop" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallTop"]
+position = Vector2(607, -10)
+shape = SubResource("RectangleShape2D_sb1lg")
+
+[node name="WallBottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 668)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallBottom"]
+position = Vector2(607, -10)
+shape = SubResource("RectangleShape2D_sb1lg")
+
+[node name="Ball" parent="." instance=ExtResource("2_7jvdy")]
+position = Vector2(576, 325)
+
+[node name="Opponent" parent="." node_paths=PackedStringArray("ball") instance=ExtResource("3_ci842")]
+position = Vector2(1136, 325)
+ball = NodePath("../Ball")
+
+[node name="Player1Name" type="Label" parent="."]
+offset_right = 438.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+text = "Player Name"
+label_settings = SubResource("LabelSettings_7epbh")
+
+[node name="Player2Name" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -438.0
+offset_bottom = 96.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+text = "Player Name"
+label_settings = SubResource("LabelSettings_7epbh")
+horizontal_alignment = 2
+
+[node name="WallLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLeft"]
+position = Vector2(-51, 324)
+shape = SubResource("RectangleShape2D_7ki2l")
+
+[node name="WallRight" type="Area2D" parent="."]
+position = Vector2(1257, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallRight"]
+position = Vector2(-51, 324)
+shape = SubResource("RectangleShape2D_7ki2l")
+
+[node name="CountdownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="MatchTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="pause_background" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_pqt2p")
+expand_mode = 3
+script = ExtResource("9_iphl2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -81.0
+offset_right = 150.0
+offset_bottom = 81.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="continue_button" type="Button" parent="pause_background/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+theme_override_constants/icon_max_width = 300
+theme_override_fonts/font = ExtResource("3_d8ivu")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_qc3l2")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_uj3ad")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g82a5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_n1g0n")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ididc")
+text = "CONTINUE"
+icon = ExtResource("8_dwodk")
+icon_alignment = 1
+
+[node name="main_menu_button" type="Button" parent="pause_background/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+theme_override_constants/icon_max_width = 300
+theme_override_fonts/font = ExtResource("3_d8ivu")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/focus = SubResource("StyleBoxFlat_uhtsw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_1h0hl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_32wgn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sthim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e62pk")
+text = "MAIN MENU"
+icon = ExtResource("8_dwodk")
+icon_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -102.0
+offset_right = 102.0
+offset_bottom = 90.0
+grow_horizontal = 2
+theme_override_constants/separation = -5
+
+[node name="time_left" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "- : - -"
+label_settings = SubResource("LabelSettings_pcdjd")
+
+[node name="FirstTo" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+theme_override_fonts/font = ExtResource("3_d8ivu")
+theme_override_font_sizes/font_size = 20
+text = "FIRST TO PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="victory_screen" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_pqt2p")
+expand_mode = 3
+script = ExtResource("11_k2ino")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="victory_screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -45.5
+offset_right = 258.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="winner" type="Label" parent="victory_screen/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "PLAYER X WINS"
+label_settings = SubResource("LabelSettings_alggb")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenuControl" type="Control" parent="victory_screen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="main_menu_button" type="Button" parent="victory_screen/VBoxContainer/MainMenuControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -20.5556
+offset_right = 258.0
+offset_bottom = 20.5556
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 0
+theme_override_colors/font_hover_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+theme_override_constants/icon_max_width = 200
+theme_override_fonts/font = ExtResource("3_d8ivu")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_0xg3q")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0xg3q")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xg3q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xg3q")
+text = "MAIN MENU"
+icon = ExtResource("8_dwodk")
+icon_alignment = 1
+
+[connection signal="body_entered" from="WallLeft" to="." method="_on_wall_left_body_entered"]
+[connection signal="body_entered" from="WallRight" to="." method="_on_wall_right_body_entered"]
+[connection signal="timeout" from="CountdownTimer" to="." method="_on_countdown_timer_timeout"]
+[connection signal="timeout" from="MatchTimer" to="." method="_on_match_timer_timeout"]
+[connection signal="pressed" from="pause_background/VBoxContainer/continue_button" to="pause_background" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="pause_background/VBoxContainer/main_menu_button" to="pause_background" method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="victory_screen/VBoxContainer/MainMenuControl/main_menu_button" to="victory_screen" method="_on_main_menu_button_pressed"]

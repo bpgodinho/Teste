@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://brbwm281pjfo0"]
+
+[ext_resource type="Script" path="res://animation_player.gd" id="1_la43f"]
+[ext_resource type="Texture2D" uid="uid://cbkvyuge6wuss" path="res://assets/UI/UI-Dark/BGBlue.png" id="2_qwafv"]
+
+[sub_resource type="Animation" id="Animation_ny0s7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_17ovx"]
+resource_name = "button_press"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_45f63"]
+_data = {
+"RESET": SubResource("Animation_ny0s7"),
+"button_press": SubResource("Animation_17ovx")
+}
+
+[node name="animation_player" type="AnimationPlayer"]
+process_mode = 3
+libraries = {
+"": SubResource("AnimationLibrary_45f63")
+}
+script = ExtResource("1_la43f")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qwafv")
+expand_mode = 3

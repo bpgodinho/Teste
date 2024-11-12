@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://c65oxbp75cvgc"]
+
+[ext_resource type="Texture2D" uid="uid://dd0numbcegeht" path="res://assets/UI/UI-OLD/EmptyButton.png" id="1_apwdb"]
+[ext_resource type="Script" path="res://match_options/points_button.gd" id="2_o4mt2"]
+[ext_resource type="AudioStream" uid="uid://wfq07f4672mu" path="res://assets/Audio/button_high.mp3" id="3_cqcy8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qtjnw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4xwa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe6f0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rrhbq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rluaf"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="points_button" type="Button"]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -50.0
+offset_right = 52.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 50)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_constants/icon_max_width = 100
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_qtjnw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h4xwa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fe6f0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rrhbq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_rluaf")
+text = "
+"
+icon = ExtResource("1_apwdb")
+script = ExtResource("2_o4mt2")
+
+[node name="button_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_cqcy8")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]

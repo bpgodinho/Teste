@@ -1,0 +1,302 @@
+[gd_scene load_steps=34 format=3 uid="uid://c7o7q7e0ob0lh"]
+
+[ext_resource type="Script" path="res://match_options/match_settings.gd" id="1_3skej"]
+[ext_resource type="Texture2D" uid="uid://cbkvyuge6wuss" path="res://assets/UI/UI-Dark/BGBlue.png" id="1_bfe4l"]
+[ext_resource type="PackedScene" uid="uid://c65oxbp75cvgc" path="res://match_options/points_button.tscn" id="2_q8wjy"]
+[ext_resource type="Texture2D" uid="uid://b3ro2p6gcg2wi" path="res://assets/UI/UI-Dark/3pointsButtonNEW.png" id="3_15ajv"]
+[ext_resource type="Texture2D" uid="uid://b1qlqcblmn53b" path="res://assets/UI/UI-Light/3pointsButtonNEWLight.png" id="4_plqkq"]
+[ext_resource type="Texture2D" uid="uid://dt8rjg6xos1ex" path="res://assets/UI/UI-Dark/5pointsButtonNew.png" id="5_qnofx"]
+[ext_resource type="Texture2D" uid="uid://rqeky5yysyxl" path="res://assets/UI/UI-Light/5pointsButtonNewLight.png" id="6_r2wmg"]
+[ext_resource type="Texture2D" uid="uid://di2jdrkqw5ngc" path="res://assets/UI/UI-Dark/10pointsButtonNEW.png" id="7_utcxb"]
+[ext_resource type="Texture2D" uid="uid://sb1jo75o088n" path="res://assets/UI/UI-Light/10pointsButtonNEWLight.png" id="8_wh8rj"]
+[ext_resource type="Texture2D" uid="uid://bre2lb8lf7c3t" path="res://assets/UI/UI-Dark/15pointsButtonNEW.png" id="9_5qsde"]
+[ext_resource type="Texture2D" uid="uid://4xai4l7a27en" path="res://assets/UI/UI-Light/15pointsButtonNEWLight.png" id="10_rdjog"]
+[ext_resource type="Texture2D" uid="uid://edaqva8ps3w3" path="res://assets/UI/UI-Dark/InfinitePointsButtonNEW.png" id="11_qk24f"]
+[ext_resource type="Texture2D" uid="uid://8irh1p0lq3u7" path="res://assets/UI/UI-Light/InfinitePointsButtonNEWLight.png" id="12_tsumb"]
+[ext_resource type="FontFile" uid="uid://cjipaoxdc4ypp" path="res://assets/Fonts/Hauser.otf" id="13_qfca4"]
+[ext_resource type="Texture2D" uid="uid://bjej5lla4wljl" path="res://assets/UI/UI-Dark/InfiniteTimeButtonNEW.png" id="14_q6dt6"]
+[ext_resource type="Texture2D" uid="uid://23f0d4s20f4v" path="res://assets/UI/UI-Dark/BlankTextBackgroundNEW.png" id="15_ucue6"]
+[ext_resource type="PackedScene" uid="uid://cgqg68w2xefen" path="res://match_options/mins_button.tscn" id="17_hdinp"]
+[ext_resource type="Texture2D" uid="uid://1qfvnk3x1ihk" path="res://assets/UI/UI-Dark/1minButtonNEW.png" id="18_mv10o"]
+[ext_resource type="Texture2D" uid="uid://yhifubtvspnf" path="res://assets/UI/UI-Light/1minButtonNEWLight.png" id="19_tl75e"]
+[ext_resource type="Texture2D" uid="uid://du8ofbqvxskt0" path="res://assets/UI/UI-Dark/2minButtonNEW.png" id="20_86btc"]
+[ext_resource type="Texture2D" uid="uid://djtftx80j37am" path="res://assets/UI/UI-Light/2minButtonNEWLight.png" id="21_tl5s2"]
+[ext_resource type="Texture2D" uid="uid://ccdjom6c1l1a2" path="res://assets/UI/UI-Dark/5minButtonNEW.png" id="22_j0l50"]
+[ext_resource type="Texture2D" uid="uid://bemdb7ny2nc04" path="res://assets/UI/UI-Light/5minButtonNEWLight.png" id="23_c3vho"]
+[ext_resource type="Texture2D" uid="uid://cc6k18x4oc02a" path="res://assets/UI/UI-Dark/10minButtonNEW.png" id="24_b3b0j"]
+[ext_resource type="Texture2D" uid="uid://c24w8abb3ddr1" path="res://assets/UI/UI-Light/10minButtonNEWLight.png" id="25_eejn2"]
+[ext_resource type="Texture2D" uid="uid://fhs8rddlkw46" path="res://assets/UI/UI-Light/InfiniteTimeButtonNEWLight.png" id="26_8ythd"]
+
+[sub_resource type="Theme" id="Theme_rw5h4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a6vf"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57kia"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj0dx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy17g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbkim"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4irox"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="match_settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3skej")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bfe4l")
+expand_mode = 3
+
+[node name="settings" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="left_panel" type="VBoxContainer" parent="settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="top_padding" type="BoxContainer" parent="settings/left_panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="point_grid" type="GridContainer" parent="settings/left_panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = SubResource("Theme_rw5h4")
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="3_points_button" parent="settings/left_panel/point_grid" instance=ExtResource("2_q8wjy")]
+layout_mode = 2
+icon = ExtResource("3_15ajv")
+light = ExtResource("4_plqkq")
+dark = ExtResource("3_15ajv")
+points = 3
+description = "3 POINTS"
+
+[node name="5_points_button" parent="settings/left_panel/point_grid" instance=ExtResource("2_q8wjy")]
+layout_mode = 2
+icon = ExtResource("5_qnofx")
+light = ExtResource("6_r2wmg")
+dark = ExtResource("5_qnofx")
+points = 5
+description = "5 POINTS"
+
+[node name="10_poiints_button" parent="settings/left_panel/point_grid" instance=ExtResource("2_q8wjy")]
+layout_mode = 2
+icon = ExtResource("7_utcxb")
+light = ExtResource("8_wh8rj")
+dark = ExtResource("7_utcxb")
+points = 10
+description = "10 POINTS"
+
+[node name="15_points_button" parent="settings/left_panel/point_grid" instance=ExtResource("2_q8wjy")]
+layout_mode = 2
+icon = ExtResource("9_5qsde")
+light = ExtResource("10_rdjog")
+dark = ExtResource("9_5qsde")
+points = 15
+description = "15 POINTS"
+
+[node name="infinite_points_button" parent="settings/left_panel" instance=ExtResource("2_q8wjy")]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+icon = ExtResource("11_qk24f")
+light = ExtResource("12_tsumb")
+dark = ExtResource("11_qk24f")
+description = "NO POINTS LIMIT"
+
+[node name="middle_panel" type="VBoxContainer" parent="settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="current_selection_title" type="Label" parent="settings/middle_panel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.191529, 0.266249, 1)
+theme_override_fonts/font = ExtResource("13_qfca4")
+theme_override_font_sizes/font_size = 40
+text = "CURRENT SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="current_selection" type="HBoxContainer" parent="settings/middle_panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="current_points_selection" type="VBoxContainer" parent="settings/middle_panel/current_selection"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="current_points_selection_icon" type="TextureRect" parent="settings/middle_panel/current_selection/current_points_selection"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture = ExtResource("5_qnofx")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="current_points_selection_label" type="Label" parent="settings/middle_panel/current_selection/current_points_selection"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.191529, 0.266249, 1)
+theme_override_fonts/font = ExtResource("13_qfca4")
+theme_override_font_sizes/font_size = 20
+text = "5 POINTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="current_time_selection" type="VBoxContainer" parent="settings/middle_panel/current_selection"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="current_time_selection_icon" type="TextureRect" parent="settings/middle_panel/current_selection/current_time_selection"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture = ExtResource("14_q6dt6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="current_time_selection_label" type="Label" parent="settings/middle_panel/current_selection/current_time_selection"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.191529, 0.266249, 1)
+theme_override_fonts/font = ExtResource("13_qfca4")
+theme_override_font_sizes/font_size = 20
+text = "NO TIME LIMIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="padding" type="HSeparator" parent="settings/middle_panel"]
+light_mask = 0
+visibility_layer = 0
+layout_mode = 2
+
+[node name="go_back_button_control" type="Control" parent="settings/middle_panel"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="go_back_button" type="Button" parent="settings/middle_panel/go_back_button_control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -87.5
+offset_top = -17.9861
+offset_right = 87.5
+offset_bottom = 17.9861
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+theme_override_constants/icon_max_width = 175
+theme_override_fonts/font = ExtResource("13_qfca4")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1a6vf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_57kia")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hj0dx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gy17g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kbkim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4irox")
+text = "CONFIRM"
+icon = ExtResource("15_ucue6")
+icon_alignment = 1
+
+[node name="RightPanel" type="VBoxContainer" parent="settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="top_padding" type="BoxContainer" parent="settings/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="time_grid" type="GridContainer" parent="settings/RightPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = SubResource("Theme_rw5h4")
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="1_min_button" parent="settings/RightPanel/time_grid" instance=ExtResource("17_hdinp")]
+layout_mode = 2
+icon = ExtResource("18_mv10o")
+light = ExtResource("19_tl75e")
+dark = ExtResource("18_mv10o")
+mins = 1
+description = "1 MINUTE"
+
+[node name="2_min_button" parent="settings/RightPanel/time_grid" instance=ExtResource("17_hdinp")]
+layout_mode = 2
+icon = ExtResource("20_86btc")
+light = ExtResource("21_tl5s2")
+dark = ExtResource("20_86btc")
+mins = 2
+description = "2 MINUTES"
+
+[node name="5_min_button" parent="settings/RightPanel/time_grid" instance=ExtResource("17_hdinp")]
+layout_mode = 2
+icon = ExtResource("22_j0l50")
+light = ExtResource("23_c3vho")
+dark = ExtResource("22_j0l50")
+mins = 5
+description = "5 MINUTES"
+
+[node name="10_min_button" parent="settings/RightPanel/time_grid" instance=ExtResource("17_hdinp")]
+layout_mode = 2
+icon = ExtResource("24_b3b0j")
+light = ExtResource("25_eejn2")
+dark = ExtResource("24_b3b0j")
+mins = 10
+description = "10 MINUTES"
+
+[node name="infinite_min_button" parent="settings/RightPanel" instance=ExtResource("17_hdinp")]
+layout_mode = 2
+size_flags_vertical = 2
+icon = ExtResource("14_q6dt6")
+light = ExtResource("26_8ythd")
+dark = ExtResource("14_q6dt6")
+
+[connection signal="pressed" from="settings/middle_panel/go_back_button_control/go_back_button" to="." method="_on_go_back_button_pressed"]

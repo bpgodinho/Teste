@@ -1,0 +1,289 @@
+[gd_scene load_steps=34 format=3 uid="uid://c7o7q7e0ob0lh"]
+
+[ext_resource type="PackedScene" uid="uid://c65oxbp75cvgc" path="res://points_button.tscn" id="1_6movl"]
+[ext_resource type="Texture2D" uid="uid://cbkvyuge6wuss" path="res://assets/UI-Dark/BGBlue.png" id="1_m5mlx"]
+[ext_resource type="Texture2D" uid="uid://b3ro2p6gcg2wi" path="res://assets/UI-Dark/3pointsButtonNEW.png" id="2_mqtfa"]
+[ext_resource type="Texture2D" uid="uid://dt8rjg6xos1ex" path="res://assets/UI-Dark/5pointsButtonNew.png" id="3_nu3d2"]
+[ext_resource type="Texture2D" uid="uid://b1qlqcblmn53b" path="res://assets/UI-Light/3pointsButtonNEWLight.png" id="4_68xnp"]
+[ext_resource type="Texture2D" uid="uid://di2jdrkqw5ngc" path="res://assets/UI-Dark/10pointsButtonNEW.png" id="4_trh8o"]
+[ext_resource type="Texture2D" uid="uid://bre2lb8lf7c3t" path="res://assets/UI-Dark/15pointsButtonNEW.png" id="5_ipmao"]
+[ext_resource type="Texture2D" uid="uid://rqeky5yysyxl" path="res://assets/UI-Light/5pointsButtonNewLight.png" id="6_0tfqd"]
+[ext_resource type="Texture2D" uid="uid://edaqva8ps3w3" path="res://assets/UI-Dark/InfinitePointsButtonNEW.png" id="6_w8m10"]
+[ext_resource type="FontFile" uid="uid://cjipaoxdc4ypp" path="res://assets/Fonts/Hauser.otf" id="7_gbv06"]
+[ext_resource type="Texture2D" uid="uid://bjej5lla4wljl" path="res://assets/UI-Dark/InfiniteTimeButtonNEW.png" id="8_8e3l1"]
+[ext_resource type="Texture2D" uid="uid://sb1jo75o088n" path="res://assets/UI-Light/10pointsButtonNEWLight.png" id="8_tq22w"]
+[ext_resource type="PackedScene" uid="uid://cgqg68w2xefen" path="res://mins_button.tscn" id="9_ax6gq"]
+[ext_resource type="Texture2D" uid="uid://23f0d4s20f4v" path="res://assets/UI-Dark/BlankTextBackgroundNEW.png" id="10_38s2s"]
+[ext_resource type="Texture2D" uid="uid://4xai4l7a27en" path="res://assets/UI-Light/15pointsButtonNEWLight.png" id="10_y3ehe"]
+[ext_resource type="Script" path="res://MainMenu/go_back_button.gd" id="11_1kimx"]
+[ext_resource type="Texture2D" uid="uid://1qfvnk3x1ihk" path="res://assets/UI-Dark/1minButtonNEW.png" id="11_cweir"]
+[ext_resource type="Texture2D" uid="uid://8irh1p0lq3u7" path="res://assets/UI-Light/InfinitePointsButtonNEWLight.png" id="12_dlnlx"]
+[ext_resource type="Texture2D" uid="uid://du8ofbqvxskt0" path="res://assets/UI-Dark/2minButtonNEW.png" id="12_qo4em"]
+[ext_resource type="Texture2D" uid="uid://ccdjom6c1l1a2" path="res://assets/UI-Dark/5minButtonNEW.png" id="13_4tqtu"]
+[ext_resource type="Texture2D" uid="uid://cc6k18x4oc02a" path="res://assets/UI-Dark/10minButtonNEW.png" id="14_rqebo"]
+[ext_resource type="Texture2D" uid="uid://yhifubtvspnf" path="res://assets/UI-Light/1minButtonNEWLight.png" id="19_wq2i5"]
+[ext_resource type="Texture2D" uid="uid://djtftx80j37am" path="res://assets/UI-Light/2minButtonNEWLight.png" id="21_4tv6n"]
+[ext_resource type="Texture2D" uid="uid://bemdb7ny2nc04" path="res://assets/UI-Light/5minButtonNEWLight.png" id="23_ppxsq"]
+[ext_resource type="Texture2D" uid="uid://c24w8abb3ddr1" path="res://assets/UI-Light/10minButtonNEWLight.png" id="25_f3bcl"]
+[ext_resource type="Texture2D" uid="uid://fhs8rddlkw46" path="res://assets/UI-Light/InfiniteTimeButtonNEWLight.png" id="26_xbm0a"]
+
+[sub_resource type="Theme" id="Theme_rw5h4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1a6vf"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_57kia"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hj0dx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy17g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbkim"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4irox"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="MatchSettings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_m5mlx")
+expand_mode = 3
+
+[node name="Settings" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Leftpanel" type="VBoxContainer" parent="Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Settings/Leftpanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Settings/Leftpanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = SubResource("Theme_rw5h4")
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="3pointsButton" parent="Settings/Leftpanel/GridContainer" instance=ExtResource("1_6movl")]
+layout_mode = 2
+icon = ExtResource("2_mqtfa")
+light = ExtResource("4_68xnp")
+points = 3
+description = "3 POINTS"
+
+[node name="5pointsButton" parent="Settings/Leftpanel/GridContainer" instance=ExtResource("1_6movl")]
+layout_mode = 2
+icon = ExtResource("3_nu3d2")
+light = ExtResource("6_0tfqd")
+points = 5
+description = "5 POINTS"
+
+[node name="10pointsButton" parent="Settings/Leftpanel/GridContainer" instance=ExtResource("1_6movl")]
+layout_mode = 2
+icon = ExtResource("4_trh8o")
+light = ExtResource("8_tq22w")
+points = 10
+description = "10 POINTS"
+
+[node name="15pointsButton" parent="Settings/Leftpanel/GridContainer" instance=ExtResource("1_6movl")]
+layout_mode = 2
+icon = ExtResource("5_ipmao")
+light = ExtResource("10_y3ehe")
+points = 15
+description = "15 POINTS"
+
+[node name="BoxContainer2" type="BoxContainer" parent="Settings/Leftpanel"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+
+[node name="InfintePointsButton" parent="Settings/Leftpanel/BoxContainer2" instance=ExtResource("1_6movl")]
+layout_mode = 2
+icon = ExtResource("6_w8m10")
+light = ExtResource("12_dlnlx")
+description = "NO POINTS LIMIT"
+
+[node name="MiddlePanel" type="VBoxContainer" parent="Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+
+[node name="TitleText" type="Label" parent="Settings/MiddlePanel"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.191529, 0.266249, 1)
+theme_override_fonts/font = ExtResource("7_gbv06")
+theme_override_font_sizes/font_size = 40
+text = "CURRENT SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MiddlePanel"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/MiddlePanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CurrentSelectionPoints" type="TextureRect" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture = ExtResource("3_nu3d2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="BoxContainer" type="BoxContainer" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PointsDesc" type="Label" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer/VBoxContainer/BoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.191529, 0.266249, 1)
+theme_override_fonts/font = ExtResource("7_gbv06")
+theme_override_font_sizes/font_size = 20
+text = "5 POINTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CurrentSelectionTime" type="TextureRect" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+texture = ExtResource("8_8e3l1")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TimeDesc" type="Label" parent="Settings/MiddlePanel/VBoxContainer/HBoxContainer/VBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.191529, 0.266249, 1)
+theme_override_fonts/font = ExtResource("7_gbv06")
+theme_override_font_sizes/font_size = 20
+text = "NO TIME LIMIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Settings/MiddlePanel"]
+light_mask = 0
+visibility_layer = 0
+layout_mode = 2
+
+[node name="GoBackButton" type="Button" parent="Settings/MiddlePanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme_override_colors/font_hover_pressed_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_hover_color = Color(1, 0.796078, 0.796078, 1)
+theme_override_colors/font_color = Color(1, 0.109804, 0.215686, 1)
+theme_override_constants/icon_max_width = 175
+theme_override_fonts/font = ExtResource("7_gbv06")
+theme_override_font_sizes/font_size = 25
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_1a6vf")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_57kia")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_hj0dx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gy17g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kbkim")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4irox")
+text = "CONFIRM"
+icon = ExtResource("10_38s2s")
+icon_alignment = 1
+script = ExtResource("11_1kimx")
+
+[node name="RightPanel" type="VBoxContainer" parent="Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Settings/RightPanel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Settings/RightPanel"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = SubResource("Theme_rw5h4")
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="1minButton" parent="Settings/RightPanel/GridContainer" instance=ExtResource("9_ax6gq")]
+layout_mode = 2
+icon = ExtResource("11_cweir")
+light = ExtResource("19_wq2i5")
+mins = 1
+description = "1 MINUTE"
+
+[node name="2minButton" parent="Settings/RightPanel/GridContainer" instance=ExtResource("9_ax6gq")]
+layout_mode = 2
+icon = ExtResource("12_qo4em")
+light = ExtResource("21_4tv6n")
+mins = 2
+description = "2 MINUTES"
+
+[node name="5minButton" parent="Settings/RightPanel/GridContainer" instance=ExtResource("9_ax6gq")]
+layout_mode = 2
+icon = ExtResource("13_4tqtu")
+light = ExtResource("23_ppxsq")
+mins = 5
+description = "5 MINUTES"
+
+[node name="10minButton" parent="Settings/RightPanel/GridContainer" instance=ExtResource("9_ax6gq")]
+layout_mode = 2
+icon = ExtResource("14_rqebo")
+light = ExtResource("25_f3bcl")
+mins = 10
+description = "10 MINUTES"
+
+[node name="BoxContainer2" type="BoxContainer" parent="Settings/RightPanel"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 2
+
+[node name="infiniteTimeButton" parent="Settings/RightPanel/BoxContainer2" instance=ExtResource("9_ax6gq")]
+layout_mode = 2
+icon = ExtResource("8_8e3l1")
+light = ExtResource("26_xbm0a")
+
+[connection signal="pressed" from="Settings/MiddlePanel/GoBackButton" to="Settings/MiddlePanel/GoBackButton" method="_on_pressed"]

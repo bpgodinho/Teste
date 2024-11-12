@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0kmg6csi6454"]
+
+[ext_resource type="Script" path="res://customization/color_pick_button.gd" id="1_uvnij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7o1l"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="ColorPickButton" type="Button"]
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 10)
+theme_override_styles/normal = SubResource("StyleBoxFlat_m7o1l")
+script = ExtResource("1_uvnij")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
